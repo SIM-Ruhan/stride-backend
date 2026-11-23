@@ -25,7 +25,7 @@ const app = await createApp({
     storePassword: env.SSLCOMMERZ_STORE_PASSWORD,
   },
 });
-const server = app.listen(Number(env.PORT || 8000), () => console.log('Stride API is listening.'));
+
 for (const signal of ['SIGTERM', 'SIGINT'])
   process.on(signal, () =>
     server.close(async () => {
